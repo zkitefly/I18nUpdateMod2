@@ -17,9 +17,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '3.0.1'
-group = 'com.github.tartaricacid'
-archivesBaseName = 'i18nupdatemod-1.18'
+version = "${project.mod_version}-${project.minecraft_version}"
+group = "${project.maven_group}"
+archivesBaseName = "${project.archives_base_name}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
@@ -29,7 +29,7 @@ mixin {
 }
 
 minecraft {
-    mappings channel: 'official', version: '1.18.1'
+    mappings channel: "${project.mapping_channel}", version: "${project.minecraft_version}"
     runs {
         client {
             workingDirectory project.file('run')
@@ -66,8 +66,8 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.1-39.0.85'
-    implementation fg.deobf("vazkii.patchouli:Patchouli:1.18.1-62-SNAPSHOT")
+    minecraft "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
+    implementation fg.deobf("vazkii.patchouli:Patchouli:${project.patchouli_version}")
     annotationProcessor('org.spongepowered:mixin:0.8.2')
     annotationProcessor('org.spongepowered:mixin:0.8.2:processor')
 }
