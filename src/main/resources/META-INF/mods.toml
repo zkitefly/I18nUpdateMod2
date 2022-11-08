@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="i18nupdatemod"
-version="${file.jarVersion}"
+version="${version}"
 displayName="I18nUpdateMod Non-LTS"
 logoFile="assets/i18n/icon.png"
 credits="TartaricAcid, baka-gourd, exzhawk"
@@ -12,17 +12,3 @@ authors="TexTrue"
 description='''
 自动汉化更新模组
 '''
-
-[[dependencies.i18nupdatemod]]
-modId="forge"
-mandatory=true
-versionRange="[40,)"
-ordering="NONE"
-side="BOTH"
-
-[[dependencies.i18nupdatemod]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.19,)"
-ordering="NONE"
-side="BOTH"
