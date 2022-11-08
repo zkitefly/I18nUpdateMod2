@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="i18nupdatemod"
-version="${version}"
+version="${file.jarVersion}"
 displayName="I18nUpdateMod Non-LTS"
 logoFile="assets/i18n/icon.png"
 credits="TartaricAcid, baka-gourd, exzhawk"
