@@ -1,14 +1,13 @@
 {
   "required": true,
+  "minVersion": "0.8",
   "package": "com.github.tartaricacid.i18nupdatemod.mixin",
   "compatibilityLevel": "JAVA_17",
-  "target": "@env(DEFAULT)",
-  "setSourceFile": true,
-  "minVersion": "0.8",
+  "injectors": {
+    "defaultRequire": 1
+  },
   "mixins": [
     "MixinBookContentClasspathLoader",
-    "MixinBookContentExternalLoader",
-    "MixinBookContentResourceDirectLoader",
-    "MixinBookContentResourceListenerLoader"
+    "MixinBookRegistry"
   ]
 }
