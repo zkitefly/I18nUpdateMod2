@@ -1,12 +1,12 @@
-modLoader="javafml"
-loaderVersion="[40,)"
-license="MIT"
+modLoader = "javafml"
+loaderVersion = "[43,)"
+license = "MIT"
 
 [[mods]]
-modId="i18nupdatemod"
-version="${version}"
-displayName="I18nUpdateMod Non-LTS"
-logoFile="assets/i18n/icon.png"
+modId = "i18nupdatemod"
+version = "${version}"
+displayName = "I18nUpdateMod Non-LTS"
+logoFile="icon.png"
 credits="TartaricAcid, baka-gourd, exzhawk"
 authors="TexTrue"
 description='''
@@ -14,15 +14,15 @@ description='''
 '''
 
 [[dependencies.i18nupdatemod]]
-modId="forge"
-mandatory=true
-versionRange="[40,)"
-ordering="NONE"
-side="BOTH"
+modId = "forge"
+mandatory = true
+versionRange = "[43,)"
+ordering = "NONE"
+side = "BOTH"
 
 [[dependencies.i18nupdatemod]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.19,)"
-ordering="NONE"
-side="BOTH"
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19,)"
+ordering = "NONE"
+side = "BOTH"
