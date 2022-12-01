@@ -14,7 +14,7 @@ loom {
 
     forge {
         mixinConfigs = [
-                "examplemod.mixins.json"
+                "i18n.mixins.json"
         ]
         dataGen {
             mod project.mod_id
