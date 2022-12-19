@@ -1,26 +1,34 @@
 {
   "schema_version": 1,
   "mixin": [
-    "examplemod.mixins.json",
-    "examplemod-common.mixins.json"
+    "i18n.quilt.mixins.json"
   ],
   "quilt_loader": {
     "group": "${group}",
-    "id": "examplemod",
+    "id": "i18nupdatemod",
     "version": "${version}",
-    "name": "Example Mod",
-    "description": "This is an example description! Tell everyone what your mod is about!",
-    "authors": ["Me!"],
+    "name": "I18nUpdateMod Non-LTS Architectury",
+    "description": "自动汉化更新",
+    "authors": [
+      "TexTrue",
+      "TexTrueStudio"
+    ],
+    "credits": [
+      "TartaricAcid",
+      "baka-gourd",
+      "exzhawk"
+    ],
     "contact": {
-      "sources": "https://github.com/architectury/architectury-templates"
+      "homepage": "https://modrinth.com/mod/i18nupdatemod-nlts",
+      "sources": "https://github.com/TexTrueStudio/I18nUpdateMod2-NLTS"
     },
-    "license": "Insert License Here",
-    "icon": "assets/examplemod/icon.png",
+    "license": "MIT",
+    "icon": "assets/i18n/icon.png",
     "intermediate_mappings": "net.fabricmc:intermediary",
     "environment": "*",
     "entrypoints": {
       "init": [
-        "net.examplemod.quilt.ExampleModQuilt"
+        "com.github.tartaricacid.i18nupdatemod.quilt.I18nUpdateModQuilt"
       ]
     },
     "depends": [
