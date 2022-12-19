@@ -1,6 +1,5 @@
-package com.github.tartaricacid.i18nupdatemod.fabric;
+package com.github.tartaricacid.i18nupdatemod;
 
-import com.github.tartaricacid.i18nupdatemod.I18nUpdateModExpectPlatform;
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 import org.apache.commons.io.FileUtils;
