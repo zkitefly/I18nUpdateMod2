@@ -11,7 +11,7 @@ authors = "TexTrue, TexTrueStudio"
 description = '''
 自动汉化更新
 '''
-#logoFile = ""
+logoFile = "icon.png"
 
 [[dependencies.i18nupdatemod]]
 modId = "forge"

@@ -11,10 +11,6 @@ architectury {
     loader("quilt")
 }
 
-loom {
-    //accessWidenerPath = project(":common").loom.accessWidenerPath
-}
-
 configurations {
     common
     shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
@@ -22,6 +18,8 @@ configurations {
     runtimeClasspath.extendsFrom common
     developmentQuilt.extendsFrom common
 }
+
+project.archivesBaseName = rootProject.archivesBaseName + "-Quilt"
 
 dependencies {
     modImplementation "org.quiltmc:quilt-loader:${rootProject.quilt_loader_version}"
