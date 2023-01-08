@@ -2,7 +2,7 @@
 
 <img height="150" src="icon/icon-arch.png" width="150"/>
 
-# 自动汉化更新模组Ⅱ 非官方Non-LTS Architectury Exp
+# 自动汉化更新模组Ⅱ 非官方Non-LTS Architectury
 
 ![Enviroment](https://img.shields.io/badge/Enviroment-Client-purple)
 
