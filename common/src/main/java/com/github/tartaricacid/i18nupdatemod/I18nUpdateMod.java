@@ -20,7 +20,7 @@ import java.util.List;
 public class I18nUpdateMod {
     public static final String MOD_ID = "i18nupdatemod";
     public static final Path CACHE_DIR = Paths.get(System.getProperty("user.home"), "." + MOD_ID, "1.18");
-    public static final Path RESOURCE_FOLDER = Paths.get(MinecraftClient.getInstance().runDirectory.getPath(), "resourcepacks");
+    public static final Path RESOURCE_FOLDER = Paths.get(MinecraftClient.getInstance().getResourcePackDir().getPath());
     public static final String LANG_PACK_FILE_NAME = I18nUpdateModExpectPlatform.isPackName();
     public static final Path LOCAL_LANGUAGE_PACK = RESOURCE_FOLDER.resolve(LANG_PACK_FILE_NAME);
     public static final Path LANGUAGE_PACK = CACHE_DIR.resolve(LANG_PACK_FILE_NAME);
