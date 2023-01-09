@@ -37,7 +37,7 @@ jobs:
       - name: Build with Gradle
         run: |
           cd ${{ github.workspace }}/fabric
-          hmod +x gradlew
+          chmod +x gradlew
           sh ./gradlew build
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
@@ -58,7 +58,7 @@ jobs:
       - name: Build with Gradle
         run: |
           cd ${{ github.workspace }}/quilt
-          hmod +x gradlew
+          chmod +x gradlew
           sh ./gradlew build
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
