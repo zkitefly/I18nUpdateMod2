@@ -5,91 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fadd62b-09c5-4aca-ad8d-f723e14ce2d5" name="变更" comment="同步arch版的部分更改">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/fabric.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/fabric.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/forge.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/forge.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/quilt.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/quilt.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/github/tartaricacid/i18nupdatemod/I18nUpdateMod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/github/tartaricacid/i18nupdatemod/OptionsUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/github/tartaricacid/i18nupdatemod/mixin/MixinBookContentClasspathLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/github/tartaricacid/i18nupdatemod/mixin/MixinBookRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/resources/fabric.mod.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/src/main/resources/META-INF/accesstransformer.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/src/main/resources/META-INF/mods.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/src/main/resources/assets/i18n/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/src/main/resources/i18n.mixins.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/src/main/resources/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forge/src/main/resources/pack.mcmeta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/gradle/libs.versions.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/src/main/java/com/github/tartaricacid/i18nupdatemod/I18nUpdateMod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/src/main/java/com/github/tartaricacid/i18nupdatemod/OptionsUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/src/main/java/com/github/tartaricacid/i18nupdatemod/mixin/MixinBookContentClasspathLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/src/main/java/com/github/tartaricacid/i18nupdatemod/mixin/MixinBookRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/src/main/resources/assets/i18n/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/src/main/resources/i18n.mixin.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quilt/src/main/resources/quilt.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/forge/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/old-build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/forge/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/src/main/java/com/github/tartaricacid/i18nupdatemod/I18nUpdateMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/forge/src/main/java/com/github/tartaricacid/i18nupdatemod/I18nUpdateMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/src/main/java/com/github/tartaricacid/i18nupdatemod/mixin/MixinBookContentClasspathLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/forge/src/main/java/com/github/tartaricacid/i18nupdatemod/mixin/MixinBookContentClasspathLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/src/main/java/com/github/tartaricacid/i18nupdatemod/mixin/MixinBookRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/forge/src/main/java/com/github/tartaricacid/i18nupdatemod/mixin/MixinBookRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/src/main/resources/META-INF/mods.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/src/main/resources/META-INF/mods.toml.old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/src/main/resources/assets/i18n/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/resources/assets/i18n/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/src/main/resources/i18n.mixin.json" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/resources/i18n.mixin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD/src/main/resources/pack.mcmeta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/tartaricacid/i18nupdatemod/I18nUpdateMod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/tartaricacid/i18nupdatemod/mixin/MixinBookContentClasspathLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/tartaricacid/i18nupdatemod/mixin/MixinBookRegistry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/accesstransformer.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/i18n/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n.mixins.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pack.mcmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,13 +159,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667610808725</updated>
-    </task>
-    <task id="LOCAL-00049" summary="fix">
-      <created>1667885867347</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1667885867347</updated>
     </task>
     <task id="LOCAL-00050" summary="fix">
       <created>1667886976086</created>
@@ -586,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672500146749</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="同步arch版的部分更改">
+      <created>1673222055862</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1673222055863</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

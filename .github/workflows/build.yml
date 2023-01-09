@@ -3,7 +3,7 @@ name: Gradle Build
 on: [ pull_request, push ]
 
 jobs:
-  build:
+  forge-build:
     runs-on: ubuntu-22.04
 
     steps:
@@ -13,12 +13,55 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
-      - name: Grant execute permission for Gradlew
-        run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew build
+        run: |
+          cd ${{ github.workspace }}/forge
+          chmod +x gradlew
+          sh ./gradlew build
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: Artifacts
+          name: Forge-Artifacts
+          path: build/libs
+
+  fabric-build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 17
+      - name: Build with Gradle
+        run: |
+          cd ${{ github.workspace }}/fabric
+          hmod +x gradlew
+          sh ./gradlew build
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+         name: Fabric-Artifacts
+         path: build/libs
+
+  quilt-build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 17
+      - name: Build with Gradle
+        run: |
+          cd ${{ github.workspace }}/quilt
+          hmod +x gradlew
+          sh ./gradlew build
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Quilt-Artifacts
           path: build/libs
