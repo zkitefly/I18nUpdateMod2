@@ -7,7 +7,6 @@ import com.github.tartaricacid.i18nupdatemod.I18nUpdateMod;
 import com.google.common.base.Preconditions;
 import com.google.gson.JsonElement;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
@@ -24,18 +23,17 @@ import vazkii.patchouli.common.book.BookRegistry;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 @Mixin(value = BookContentClasspathLoader.class, remap = false)
 public class MixinBookContentClasspathLoader {
     @Inject(at = @At("HEAD"), method = "findFiles")
     private void findFiles(Book book, String dir, List<Identifier> list, CallbackInfo ci) {
         String prefix = String.format("%s/%s/%s/%s", BookRegistry.BOOKS_LOCATION, book.id.getPath(), BookContentsBuilder.DEFAULT_LANG, dir);
-        Map<Identifier, Resource> files = MinecraftClient.getInstance().getResourceManager().findResources(prefix, p -> p.getPath().endsWith(".json"));
+        Collection<Identifier> files = MinecraftClient.getInstance().getResourceManager().findResources(prefix, p -> p.endsWith(".json"));
 
-        files.keySet().stream()
+        files.stream()
                 .distinct()
                 .filter(file -> file.getNamespace().equals(book.id.getNamespace()))
                 .map(file -> {
@@ -59,17 +57,16 @@ public class MixinBookContentClasspathLoader {
     private void loadJson(Book book, Identifier resloc, @Nullable Identifier fallback, CallbackInfoReturnable<JsonElement> callback) {
         I18nUpdateMod.LOGGER.debug("[Patchouli] Loading {}", resloc);
         ResourceManager manager = MinecraftClient.getInstance().getResourceManager();
-        try {
-            Optional<Resource> resource = manager.getResource(resloc);
-            Optional<Resource> fallbackResource = manager.getResource(resloc);
 
-            if (resource.isPresent()) {
-                callback.setReturnValue(BookContentLoader.streamToJson(resource.get().getInputStream()));
-            } else if (fallbackResource.isPresent()) {
-                callback.setReturnValue(BookContentLoader.streamToJson(fallbackResource.get().getInputStream()));
+        try {
+            if (manager.containsResource(resloc)) {
+                callback.setReturnValue(BookContentLoader.streamToJson(manager.getResource(resloc).getInputStream()));
+            } else if (fallback != null && manager.containsResource(fallback)) {
+                callback.setReturnValue(BookContentLoader.streamToJson(manager.getResource(fallback).getInputStream()));
             }
-        } catch (IOException ex) {
-            throw new UncheckedIOException(ex);
+
+        } catch (IOException var7) {
+            throw new UncheckedIOException(var7);
         }
     }
 }

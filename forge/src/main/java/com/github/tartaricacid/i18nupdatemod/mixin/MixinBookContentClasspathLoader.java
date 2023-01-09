@@ -1,6 +1,5 @@
 /*
 Credit: https://github.com/kappa-maintainer/PRP
-1.19.x Version :https://github.com/RPMTW/RPMTW-Platform-Mod/blob/mc-1.19/forge/src/main/java/com/rpmtw/rpmtw_platform_mod/forge/mixins
 */
 package com.github.tartaricacid.i18nupdatemod.mixin;
 
@@ -9,7 +8,6 @@ import com.google.common.base.Preconditions;
 import com.google.gson.JsonElement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,18 +23,17 @@ import vazkii.patchouli.common.book.BookRegistry;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 @Mixin(value = BookContentClasspathLoader.class, remap = false)
 public class MixinBookContentClasspathLoader {
     @Inject(at = @At("HEAD"), method = "findFiles")
     private void findFiles(Book book, String dir, List<ResourceLocation> list, CallbackInfo ci) {
         String prefix = String.format("%s/%s/%s/%s", BookRegistry.BOOKS_LOCATION, book.id.getPath(), BookContentsBuilder.DEFAULT_LANG, dir);
-        Map<ResourceLocation, Resource> files = Minecraft.getInstance().getResourceManager().listResources(prefix, p -> p.getPath().endsWith(".json"));
+        Collection<ResourceLocation> files = Minecraft.getInstance().getResourceManager().listResources(prefix, p -> p.endsWith(".json"));
 
-        files.keySet().stream()
+        files.stream()
                 .distinct()
                 .filter(file -> file.getNamespace().equals(book.id.getNamespace()))
                 .map(file -> {
@@ -57,17 +54,14 @@ public class MixinBookContentClasspathLoader {
     }
 
     @Inject(at = @At("HEAD"), method = "loadJson", cancellable = true, remap = false)
-    private void loadJson(Book book, ResourceLocation location, @Nullable ResourceLocation fallback, CallbackInfoReturnable<JsonElement> callback) {
-        I18nUpdateMod.LOGGER.debug("[Patchouli] Loading {}", location);
+    private void loadJson(Book book, ResourceLocation resloc, @Nullable ResourceLocation fallback, CallbackInfoReturnable<JsonElement> callback) {
+        I18nUpdateMod.LOGGER.debug("[Patchouli] Loading {}", resloc);
         ResourceManager manager = Minecraft.getInstance().getResourceManager();
         try {
-            Optional<Resource> resource = manager.getResource(location);
-            Optional<Resource> fallbackResource = manager.getResource(location);
-
-            if (resource.isPresent()) {
-                callback.setReturnValue(BookContentLoader.streamToJson(resource.get().open()));
-            } else if (fallbackResource.isPresent()) {
-                callback.setReturnValue(BookContentLoader.streamToJson(fallbackResource.get().open()));
+            if (manager.hasResource(resloc)) {
+                callback.setReturnValue(BookContentLoader.streamToJson(manager.getResource(resloc).getInputStream()));
+            } else if (fallback != null && manager.hasResource(fallback)) {
+                callback.setReturnValue(BookContentLoader.streamToJson(manager.getResource(fallback).getInputStream()));
             }
         } catch (IOException ex) {
             throw new UncheckedIOException(ex);

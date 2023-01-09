@@ -1,11 +1,11 @@
 [versions]
 # The latest versions are available at https://lambdaurora.dev/tools/import_quilt.html
-minecraft = "1.19.2"
-quilt_mappings = "1.19.2+build.21"
+minecraft = "1.18.2"
+quilt_mappings = "1.18.2+build.26"
 quilt_loader = "0.17.6"
 
-quilt_standard_libraries = "3.0.0-beta.24+1.19.2"
-quilted_fabric_api = "4.0.0-beta.21+0.67.0-1.19.2"
+quilt_standard_libraries = "1.1.0-beta.26+1.18.2"
+quilted_fabric_api = "1.0.0-beta.28+0.67.0-1.18.2"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
@@ -21,7 +21,7 @@ quilted_fabric_api_deprecated = { module = "org.quiltmc.quilted-fabric-api:quilt
 [bundles]
 qfapi = ["quilted_fabric_api", "quilted_fabric_api_deprecated"]
 
-qsl_qfapi = ["quilt_standard_libraries", "quilted_fabric_api", "quilted_fabric_api_deprecated"]
+qsl_qfapi = ["quilt_standard_libraries", "quilted_fabric_api"]
 
 [plugins]
 quilt_loom = { id = "org.quiltmc.loom", version = "1.+" }
