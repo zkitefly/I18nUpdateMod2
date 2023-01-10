@@ -5,7 +5,7 @@
   "mixins": [
   ],
   "client": [
-    "MixinBookRegistry"
+    "MixinBookContents"
   ],
   "injectors": {
     "defaultRequire": 1
