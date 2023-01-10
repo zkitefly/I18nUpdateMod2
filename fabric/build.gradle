@@ -19,7 +19,9 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
-	modApi "me.shedaniel.cloth:cloth-config-fabric:4.16.91"
+	modApi ("me.shedaniel.cloth:cloth-config-fabric:4.16.91") {
+		exclude(module: "fabric-api")
+	}
 }
 
 processResources {
@@ -31,7 +33,7 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = "UTF-8"
-	def targetVersion = 17
+	def targetVersion = 8
 	if (JavaVersion.current().isJava9Compatible()) {
 		 it.options.release = targetVersion
 	}
