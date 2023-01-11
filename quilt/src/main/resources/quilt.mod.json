@@ -40,6 +40,10 @@
 			{
 				"id": "minecraft",
 				"versions": "1.19.3"
+			},
+			{
+				"id": "cloth-config",
+				"versions": "9.x"
 			}
 		]
 	},
