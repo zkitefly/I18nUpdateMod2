@@ -30,8 +30,9 @@
     "i18n.mixin.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.6",
+    "fabricloader": ">=0.10.6",
     "minecraft": "1.18.x",
+    "cloth-config": "6.x",
     "java": ">=17"
   }
 }
