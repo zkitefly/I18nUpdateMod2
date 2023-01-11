@@ -31,11 +31,12 @@ public class I18nUpdateMod {
     public static final Path CACHE_DIR = Paths.get(System.getProperty("user.home"), "." + MOD_ID, "1.16.5");
     public static final Path RESOURCE_FOLDER = Paths.get(Minecraft.getInstance().getResourcePackDirectory().getPath());
     public static final String LANG_PACK_FILE_NAME = I18nModConfig.resourcePackName + ".zip";
+    public static final String MD5_FILE_NAME = I18nModConfig.md5Name + ".md5";
     public static final Path LOCAL_LANGUAGE_PACK = RESOURCE_FOLDER.resolve(LANG_PACK_FILE_NAME);
     public static final Path LANGUAGE_PACK = CACHE_DIR.resolve(LANG_PACK_FILE_NAME);
-    public static final Path LANGUAGE_MD5 = CACHE_DIR.resolve(I18nModConfig.md5Name + ".md5");
-    public static final String LINK = I18nModConfig.downloadLink + "/" + I18nModConfig.resourcePackName + ".zip";
-    public static final String MD5 = I18nModConfig.downloadLink + "/" + I18nModConfig.md5Name + ".md5";
+    public static final Path LANGUAGE_MD5 = CACHE_DIR.resolve(MD5_FILE_NAME);
+    public static final String LINK = I18nModConfig.downloadLink + "/" + LANG_PACK_FILE_NAME;
+    public static final String MD5 = I18nModConfig.downloadLink + "/" + MD5_FILE_NAME;
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
     public static String MD5String = "";
 

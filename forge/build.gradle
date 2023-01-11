@@ -33,6 +33,7 @@ dependencies {
     // mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     forge "net.minecraftforge:forge:${project.forge_version}"
     modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
+
     modApi "me.shedaniel.cloth:cloth-config-forge:4.16.91"
 }
 
