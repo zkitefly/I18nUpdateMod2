@@ -1,5 +1,7 @@
 package com.github.tartaricacid.i18nupdatemod;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
@@ -19,20 +21,25 @@ import java.util.List;
 
 public class I18nUpdateMod implements ClientModInitializer {
     public static final String MOD_ID = "i18nupdatemod";
+	public static I18nModConfig MODCONFIG;
     public static final Path CACHE_DIR = Paths.get(System.getProperty("user.home"), "." + MOD_ID, "1.18");
     public static final Path RESOURCE_FOLDER = MinecraftClient.getInstance().getResourcePackDir().toPath();
-    public static final String LANG_PACK_FILE_NAME = "Minecraft-Mod-Language-Modpack-1-18-Fabric.zip";
-    public static final Path LOCAL_LANGUAGE_PACK = RESOURCE_FOLDER.resolve(LANG_PACK_FILE_NAME);
-    public static final Path LANGUAGE_PACK = CACHE_DIR.resolve("Minecraft-Mod-Language-Modpack-1-18-Fabric.zip");
-    public static final Path LANGUAGE_MD5 = CACHE_DIR.resolve("1.18-fabric.md5");
-    public static final String LINK = "https://ghproxy.com/https://raw.githubusercontent.com/zkitefly/TranslationPackMirror/main/files/Minecraft-Mod-Language-Modpack-1-18-Fabric.zip";
-    public static final String MD5 = "https://ghproxy.com/https://raw.githubusercontent.com/zkitefly/TranslationPackMirror/main/files/1.18-fabric.md5";
+	public static final String LANG_PACK_FILE_NAME = I18nModConfig.resourcePackName + ".zip";
+	public static final String MD5_FILE_NAME = I18nModConfig.md5Name + ".md5";
+	public static final Path LOCAL_LANGUAGE_PACK = RESOURCE_FOLDER.resolve(LANG_PACK_FILE_NAME);
+	public static final Path LANGUAGE_PACK = CACHE_DIR.resolve(LANG_PACK_FILE_NAME);
+	public static final Path LANGUAGE_MD5 = CACHE_DIR.resolve(MD5_FILE_NAME);
+	public static final String LINK = I18nModConfig.downloadLink + "/" + LANG_PACK_FILE_NAME;
+	public static final String MD5 = I18nModConfig.downloadLink + "/" + MD5_FILE_NAME;
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
     public static String MD5String = "";
     public static final Path OPTIONS_FILE = Paths.get(MinecraftClient.getInstance().runDirectory.toString(), "options.txt");
 
     @Override
     public void onInitializeClient(ModContainer mod) {
+
+		MODCONFIG = AutoConfig.register(I18nModConfig.class, Toml4jConfigSerializer::new).getConfig();
+
         try {
             OptionsUtils.createInitFile(OPTIONS_FILE.toFile());
         } catch (IOException ignore) {
