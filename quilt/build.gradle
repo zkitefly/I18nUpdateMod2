@@ -18,6 +18,10 @@ dependencies {
 	modImplementation libs.bundles.qsl.qfapi
 
 	modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
+
+	modApi ("me.shedaniel.cloth:cloth-config-fabric:8.2.88"){
+		exclude(module: "fabric-api")
+	}
 }
 
 processResources {
