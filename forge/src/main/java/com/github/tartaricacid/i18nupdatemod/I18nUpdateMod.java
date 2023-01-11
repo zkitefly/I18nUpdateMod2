@@ -1,9 +1,13 @@
 package com.github.tartaricacid.i18nupdatemod;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
 //import net.minecraft.server.packs.repository.PackRepository;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -23,18 +27,22 @@ import java.util.List;
 @Mod(I18nUpdateMod.MOD_ID)
 public class I18nUpdateMod {
     public static final String MOD_ID = "i18nupdatemod";
+    public static I18nModConfig MODCONFIG;
     public static final Path CACHE_DIR = Paths.get(System.getProperty("user.home"), "." + MOD_ID, "1.18");
-    public static final Path RESOURCE_FOLDER = Paths.get(Minecraft.getInstance().gameDirectory.getPath(), "resourcepacks");
-    public static final String LANG_PACK_FILE_NAME = "Minecraft-Mod-Language-Modpack-1-18.zip";
+    public static final Path RESOURCE_FOLDER = Minecraft.getInstance().getResourcePackDirectory().toAbsolutePath();
+    public static final String LANG_PACK_FILE_NAME = I18nModConfig.resourcePackName + ".zip";
+    public static final String MD5_FILE_NAME = I18nModConfig.md5Name + ".md5";
     public static final Path LOCAL_LANGUAGE_PACK = RESOURCE_FOLDER.resolve(LANG_PACK_FILE_NAME);
-    public static final Path LANGUAGE_PACK = CACHE_DIR.resolve("Minecraft-Mod-Language-Modpack-1-18.zip");
-    public static final Path LANGUAGE_MD5 = CACHE_DIR.resolve("1.18.md5");
-    public static final String LINK = "https://ghproxy.com/https://raw.githubusercontent.com/zkitefly/TranslationPackMirror/main/files/Minecraft-Mod-Language-Modpack-1-18.zip";
-    public static final String MD5 = "https://ghproxy.com/https://raw.githubusercontent.com/zkitefly/TranslationPackMirror/main/files/1.18.md5";
+    public static final Path LANGUAGE_PACK = CACHE_DIR.resolve(LANG_PACK_FILE_NAME);
+    public static final Path LANGUAGE_MD5 = CACHE_DIR.resolve(MD5_FILE_NAME);
+    public static final String LINK = I18nModConfig.downloadLink + "/" + LANG_PACK_FILE_NAME;
+    public static final String MD5 = I18nModConfig.downloadLink + "/" + MD5_FILE_NAME;
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
     public static String MD5String = "";
 
     public I18nUpdateMod() {
+
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onInitializeClient);
 
         Minecraft.getInstance().options.languageCode = "zh_cn";
 
@@ -191,4 +199,7 @@ public class I18nUpdateMod {
         }
     }
  */
+    private void onInitializeClient(final FMLClientSetupEvent event) {
+        MODCONFIG = AutoConfig.register(I18nModConfig.class, Toml4jConfigSerializer::new).getConfig();
+    }
 }
