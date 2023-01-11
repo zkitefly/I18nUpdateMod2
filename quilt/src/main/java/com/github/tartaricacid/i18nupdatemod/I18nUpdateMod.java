@@ -1,5 +1,7 @@
 package com.github.tartaricacid.i18nupdatemod;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;

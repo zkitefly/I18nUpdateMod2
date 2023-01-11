@@ -1,9 +1,13 @@
 package com.github.tartaricacid.i18nupdatemod;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
 //import net.minecraft.server.packs.repository.PackRepository;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -37,6 +41,8 @@ public class I18nUpdateMod {
     public static String MD5String = "";
 
     public I18nUpdateMod() {
+
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onInitializeClient);
 
         Minecraft.getInstance().options.languageCode = "zh_cn";
 
@@ -193,4 +199,7 @@ public class I18nUpdateMod {
         }
     }
  */
+    private void onInitializeClient(final FMLClientSetupEvent event) {
+        MODCONFIG = AutoConfig.register(I18nModConfig.class, Toml4jConfigSerializer::new).getConfig();
+    }
 }
