@@ -8,6 +8,6 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class I18nModConfig implements ConfigData {
     @ConfigEntry.Gui.PrefixText
     public static String downloadLink = "https://ghproxy.com/https://raw.githubusercontent.com/zkitefly/TranslationPackConvert/main/files";
-    public static String resourcePackName = "Minecraft-Mod-Language-Modpack-1-18-FabricT1-19-3-Fabric.zip";
+    public static String resourcePackName = "Minecraft-Mod-Language-Modpack-1-18-FabricT1-19-3-Fabric";
     public static String md5Name = "1.18-fabrict1.19.3-fabric";
 }
