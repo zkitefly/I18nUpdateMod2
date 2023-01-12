@@ -14,15 +14,15 @@ public class I18nUpdateModExpectPlatformImpl {
         return QuiltLoader.getConfigDir();
     }
     public static String isDownloadLink(){
-        return "http://downloader1.meitangdehulu.com:22943/Minecraft-Mod-Language-Modpack-1-18-Fabric.zip";
+        return "https://ghproxy.com/https://raw.githubusercontent.com/zkitefly/TranslationPackConvert/main/files/Minecraft-Mod-Language-Modpack-1-18T1-19-1o2.zip";
     }
     public static String isMD5Link() {
-        return "http://downloader1.meitangdehulu.com:22943/1.18-fabric.md5";
+        return "http://downloader1.meitangdehulu.com:22943/1.18-fabrict1.19.1o2-fabric.md5";
     }
     public static Path isMD5Path() {
-        return I18nUpdateMod.CACHE_DIR.resolve("1.18-fabric.md5");
+        return I18nUpdateMod.CACHE_DIR.resolve("1.18-fabrict1.19.1o2-fabric.md5");
     }
     public static String isPackName() {
-        return "Minecraft-Mod-Language-Modpack-1-18-Fabric.zip";
+        return "Minecraft-Mod-Language-Modpack-1-18T1-19-1o2.zip";
     }
 }
